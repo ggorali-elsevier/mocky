@@ -1,0 +1,26 @@
+plugins {
+    id 'java-library'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+version = '1.2.1'
+
+repositories { jcenter() }
+
+dependencies { 
+    // These two are required for the spring aop based mock creator.
+    compile group: 'org.springframework', name: 'spring-aop', version: '2.5.6'
+    compile group: 'cglib', name: 'cglib', version: '2.2.2'
+
+
+    compile group:'org.objenesis',name:'objenesis',version:'2.4'
+    compile group:'net.bytebuddy',name:'byte-buddy',version:'1.4.26'
+    compile group:'net.bytebuddy',name:'byte-buddy-agent',version:'1.4.26'
+
+    testCompile('junit:junit:4.13')
+}
+
